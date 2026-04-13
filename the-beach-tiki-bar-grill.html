@@ -1,59 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Beach Tiki Bar & Grill | Greensburg, IN</title>
-</head>
-<body style="margin:0;font-family:Segoe UI,Arial,sans-serif;background:#0d1117;color:#fff">
-<nav style="position:sticky;top:0;z-index:99;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:linear-gradient(90deg,#1a0a2e,#0d1117);border-bottom:2px solid #ff6b35">
-<span style="font-size:1.15rem;font-weight:700;color:#ffb347">🌴 The Beach Tiki</span>
-<div style="display:flex;gap:16px;font-size:.85rem">
-<a href="#features" style="color:#ffb347;text-decoration:none">Menu</a>
-<a href="#vibe" style="color:#ffb347;text-decoration:none">Vibe</a>
-<a href="#contact" style="color:#ffb347;text-decoration:none">Visit</a>
-</div>
-</nav>
-<section style="min-height:72vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 20px;background:linear-gradient(180deg,#1a0a2e 0%,#0d1117 60%,#0a1628 100%)">
-<div style="font-size:3rem;margin-bottom:8px">🍹🌴🍻</div>
-<h1 style="margin:0;font-size:clamp(1.8rem,5vw,2.8rem);background:linear-gradient(90deg,#ffb347,#ff6b35);-webkit-background-clip:text;-webkit-text-fill-color:transparent">The Beach Tiki Bar & Grill</h1>
-<p style="margin:8px 0 0;color:#8899aa;font-size:1.05rem">Tropical escape on Broadway &mdash; Greensburg&rsquo;s best patio &amp; nightlife</p>
-<a href="#contact" style="display:inline-block;margin-top:24px;padding:12px 32px;background:linear-gradient(135deg,#ff6b35,#e8432a);color:#fff;border-radius:30px;text-decoration:none;font-weight:600;font-size:.95rem;box-shadow:0 4px 20px #ff6b3544">Find Us on Broadway</a>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Beach Tiki Bar & Grill | Greensburg, IN</title><style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#0a0a0a}
+::-webkit-scrollbar-thumb{background:linear-gradient(#00dcbE,#ff6f61);border-radius:4px}
+body{font-family:Georgia,'Times New Roman',serif;background:#0a0a0a;color:#e8e0d6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,220,190,.18);display:flex;justify-content:space-between;align-items:center;padding:14px 24px}
+.nav-logo{font-size:1.15rem;font-weight:700;color:#00dcbE;letter-spacing:2px;text-shadow:0 0 18px rgba(0,220,190,.4)}
+.nav-links{display:flex;gap:24px;font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px}
+.nav-links a{position:relative}.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#ff6f61;transition:width .3s}.nav-links a:hover::after{width:100%}.nav-links a:hover{color:#ffb347}
+.menu-toggle{display:none;background:none;border:none;color:#00dcbE;font-size:1.4rem;cursor:pointer}
+@media(max-width:640px){.nav-links{position:fixed;top:54px;left:0;right:0;background:rgba(10,10,10,.98);flex-direction:column;align-items:center;padding:20px 0;gap:18px;transform:translateY(-120%);transition:transform .3s}.nav-links.open{transform:translateY(0)}.menu-toggle{display:block}}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 24px 80px;background:linear-gradient(180deg,#0a0a0a,#1a0e0e 25%,#12201e 50%,#1a0e0e 75%,#0a0a0a);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:15%;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(0,220,190,.1),rgba(255,111,97,.06) 40%,transparent 70%);animation:orbPulse 6s ease-in-out infinite alternate}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,#ffb347,#ff6f61,#00dcbE,#ff6f61,#ffb347,transparent)}
+@keyframes orbPulse{0%{opacity:.6;transform:translateX(-50%) scale(1)}100%{opacity:1;transform:translateX(-50%) scale(1.15)}}
+.glow-orb{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;animation:drift 8s ease-in-out infinite alternate}
+.glow-orb.t1{width:300px;height:300px;background:rgba(0,220,190,.09);top:10%;left:10%;animation-delay:0s}
+.glow-orb.t2{width:250px;height:250px;background:rgba(255,111,97,.07);top:60%;right:8%;animation-delay:2s}
+.glow-orb.t3{width:200px;height:200px;background:rgba(255,179,71,.06);bottom:15%;left:30%;animation-delay:4s}
+@keyframes drift{0%{transform:translateY(0) translateX(0)}100%{transform:translateY(-20px) translateX(15px)}}
+.hero h1{font-size:clamp(2.6rem,8vw,5rem);font-weight:700;line-height:1.05;margin-bottom:14px;background:linear-gradient(135deg,#00dcbE 10%,#ffb347 50%,#ff6f61 90%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradShift 5s ease-in-out infinite alternate;background-size:200% 200%}
+@keyframes gradShift{0%{background-position:0% 50%}100%{background-position:100% 50%}}
+.hero p{font-size:clamp(1rem,2.5vw,1.25rem);color:#c4b8ab;max-width:540px;line-height:1.65;margin-bottom:32px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.btn{display:inline-block;padding:15px 42px;background:linear-gradient(135deg,#00dcbE,#00a89a);color:#0a0a0a;font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:2px;border-radius:50px;transition:transform .2s,box-shadow .3s;box-shadow:0 4px 20px rgba(0,220,190,.2)}
+.btn:hover{transform:scale(1.05);box-shadow:0 0 40px rgba(0,220,190,.45),0 0 80px rgba(0,220,190,.15)}
+.divider{height:4px;background:linear-gradient(90deg,transparent 5%,#00dcbE 20%,#ff6f61 50%,#ffb347 80%,transparent 95%);margin:0}
+.section-bokeh{background-image:radial-gradient(circle at 20% 30%,rgba(0,220,190,.04) 0%,transparent 40%),radial-gradient(circle at 80% 70%,rgba(255,111,97,.03) 0%,transparent 40%),radial-gradient(circle at 50% 50%,rgba(255,179,71,.02) 0%,transparent 50%)}
+.cards{padding:80px 24px;max-width:1100px;margin:0 auto;background-image:radial-gradient(circle at 30% 20%,rgba(0,220,190,.03),transparent 50%),radial-gradient(circle at 70% 80%,rgba(255,179,71,.03),transparent 50%)}
+.cards h2{font-size:1.7rem;text-align:center;margin-bottom:48px;color:#00dcbE;text-transform:uppercase;letter-spacing:4px;text-shadow:0 0 20px rgba(0,220,190,.25);position:relative}
+.cards h2::after{content:'';display:block;width:60px;height:3px;background:linear-gradient(90deg,#ff6f61,#ffb347);margin:12px auto 0;border-radius:2px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.card{background:linear-gradient(175deg,rgba(20,40,38,.7),rgba(15,15,15,.9));border:1px solid rgba(0,220,190,.12);border-radius:16px;padding:36px 28px 32px;text-align:center;position:relative;overflow:hidden;transition:transform .25s,box-shadow .3s,border-color .3s}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#00dcbE,#ff6f61,#ffb347);border-radius:16px 16px 0 0}
+.card:hover{transform:translateY(-6px);box-shadow:0 8px 40px rgba(0,220,190,.15),0 0 60px rgba(255,111,97,.08);border-color:rgba(0,220,190,.3)}
+.card .icon{font-size:3rem;margin-bottom:14px;display:block;filter:drop-shadow(0 0 12px rgba(0,220,190,.4)) drop-shadow(0 0 6px rgba(255,179,71,.3))}
+.card h3{font-size:1.25rem;margin-bottom:10px;color:#ffb347;text-transform:uppercase;letter-spacing:1.5px}
+.card p{font-size:.92rem;line-height:1.6;color:#a89e94}
+.story{padding:80px 24px;position:relative;background:linear-gradient(180deg,rgba(26,14,14,.6),rgba(10,10,10,.8))}
+.story .warm-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(255,179,71,.06),transparent 70%);pointer-events:none}
+.story-inner{max-width:740px;margin:0 auto;position:relative;z-index:1}
+.story h2{font-size:1.7rem;text-align:center;margin-bottom:48px;color:#ff6f61;text-transform:uppercase;letter-spacing:4px}
+.story h2::after{content:'';display:block;width:60px;height:3px;background:linear-gradient(90deg,#00dcbE,#ffb347);margin:12px auto 0;border-radius:2px}
+.wave{height:24px;background:linear-gradient(90deg,transparent,#ff6f61 15%,#ffb347 35%,#00dcbE 50%,#ffb347 65%,#ff6f61 85%,transparent);position:relative;margin:40px auto;border-radius:12px;opacity:.5;max-width:300px}
+.wave::before{content:'🔥 🌴 🔥';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1rem;letter-spacing:8px}
+.pull-quote{font-size:1.2rem;line-height:1.7;color:#ffb347;border-left:3px solid #00dcbE;padding:20px 24px;margin:24px 0;background:linear-gradient(90deg,rgba(0,220,190,.06),transparent);border-radius:0 10px 10px 0;font-style:italic}
+.story p{font-size:1.02rem;line-height:1.75;color:#c4b8ab;margin-bottom:16px}
+.contact{padding:80px 24px;background:linear-gradient(180deg,rgba(10,10,10,.9),#0d0d0d);background-image:radial-gradient(circle at 15% 50%,rgba(0,220,190,.04),transparent 45%),radial-gradient(circle at 85% 30%,rgba(255,111,97,.03),transparent 45%)}
+.contact-inner{max-width:600px;margin:0 auto}
+.contact h2{font-size:1.7rem;text-align:center;margin-bottom:48px;color:#00dcbE;text-transform:uppercase;letter-spacing:4px}
+.contact h2::after{content:'';display:block;width:60px;height:3px;background:linear-gradient(90deg,#ff6f61,#ffb347);margin:12px auto 0;border-radius:2px}
+.contact-block{background:linear-gradient(135deg,rgba(20,40,38,.5),rgba(15,15,15,.7));border:1px solid rgba(0,220,190,.1);border-radius:12px;padding:18px 22px;margin-bottom:14px;display:flex;align-items:center;gap:16px;transition:border-color .3s,box-shadow .3s}
+.contact-block:hover{border-color:rgba(0,220,190,.3);box-shadow:0 0 20px rgba(0,220,190,.1)}
+.contact-block .cb-icon{font-size:1.6rem;min-width:40px;text-align:center;filter:drop-shadow(0 0 8px rgba(0,220,190,.3))}
+.contact-block .cb-label{font-size:.7rem;text-transform:uppercase;letter-spacing:2px;color:#00dcbE;display:block;margin-bottom:2px}
+.contact-block .cb-value{font-size:1rem;color:#e8e0d6}
+.contact-block .cb-value a:hover{color:#ffb347}
+.hours-block{background:linear-gradient(135deg,rgba(40,20,15,.5),rgba(15,15,15,.7));border:1px solid rgba(255,179,71,.15);border-radius:12px;padding:22px 26px;margin-bottom:18px}
+.hours-block h3{font-size:1rem;color:#ffb347;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;text-align:center}
+.hours-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,179,71,.08);font-size:.92rem;color:#a89e94}
+.hours-row:last-child{border:none}.hours-row .days{color:#c4b8ab}
+.cta-wrap{text-align:center;margin-top:28px}
+.footer{border-top:1px solid rgba(0,220,190,.1);background:linear-gradient(180deg,#0d0d0d,#080808);padding:48px 24px 28px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;max-width:1000px;margin:0 auto 32px}
+.footer-col h4{font-size:.75rem;text-transform:uppercase;letter-spacing:2.5px;color:#00dcbE;margin-bottom:14px}
+.footer-col p,.footer-col a{font-size:.88rem;color:#8a8078;line-height:1.7;display:block;margin-bottom:6px}
+.footer-col a:hover{color:#ffb347}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(0,220,190,.08);font-size:.75rem;color:#5a5249}
+.footer-bottom a{color:#00dcbE;font-size:.75rem}.footer-bottom a:hover{color:#ffb347}
+</style></head><body>
+<nav class="nav"><div class="nav-logo">&#9771; Beach Tiki</div><button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button><div class="nav-links"><a href="#features">Menu</a><a href="#story">Story</a><a href="#contact">Contact</a><a href="https://www.facebook.com/TheBeachTikiBarandGrill" target="_blank">Facebook</a></div></nav>
+<section class="hero">
+<div class="glow-orb t1"></div><div class="glow-orb t2"></div><div class="glow-orb t3"></div>
+<h1>The Beach Tiki<br>Bar &amp; Grill</h1><p>Tropical cocktails, island flavors, and vivid nights under the torches — right in the heart of Greensburg.</p><a href="tel:8126635554" class="btn">Reserve a Table</a>
 </section>
-<section id="features" style="display:grid;grid-template-columns:1fr;gap:16px;padding:32px 20px;max-width:960px;margin:auto">
-<div style="background:linear-gradient(135deg,#1e1230,#2a1a3e);border-radius:14px;padding:24px;border:1px solid #ff6b3533">
-<div style="font-size:1.6rem;margin-bottom:6px">🍹</div>
-<h3 style="margin:0 0 6px;color:#ffb347;font-size:1.05rem">Tropical Cocktails</h3>
-<p style="margin:0;color:#99aabb;font-size:.88rem;line-height:1.5">Frozen daiquiris, jungle juice, rum runners &amp; signature island blends poured all night long.</p>
-</div>
-<div style="background:linear-gradient(135deg,#1e1230,#2a1a3e);border-radius:14px;padding:24px;border:1px solid #ff6b3533">
-<div style="font-size:1.6rem;margin-bottom:6px">🍔</div>
-<h3 style="margin:0 0 6px;color:#ffb347;font-size:1.05rem">Grill Favorites</h3>
-<p style="margin:0;color:#99aabb;font-size:.88rem;line-height:1.5">Burgers, wings, fish tacos &amp; loaded fries. Hearty pub eats with a tropical twist.</p>
-</div>
-<div style="background:linear-gradient(135deg,#1e1230,#2a1a3e);border-radius:14px;padding:24px;border:1px solid #ff6b3533">
-<div style="font-size:1.6rem;margin-bottom:6px">🌙</div>
-<h3 style="margin:0 0 6px;color:#ffb347;font-size:1.05rem">Patio Nightlife</h3>
-<p style="margin:0;color:#99aabb;font-size:.88rem;line-height:1.5">Live music, karaoke, DJs &amp; late-night energy under the string lights on our open-air patio.</p>
-</div>
-<div style="background:linear-gradient(135deg,#1e1230,#2a1a3e);border-radius:14px;padding:24px;border:1px solid #ff6b3533">
-<div style="font-size:1.6rem;margin-bottom:6px">🌴</div>
-<h3 style="margin:0 0 6px;color:#ffb347;font-size:1.05rem">Island Vibes</h3>
-<p style="margin:0;color:#99aabb;font-size:.88rem;line-height:1.5">Tiki d&eacute;cor, palm accents &amp; a laid-back atmosphere that makes every night feel like vacation.</p>
-</div>
-</section>
-<section id="vibe" style="padding:48px 20px;text-align:center;background:linear-gradient(180deg,#0d1117,#1a0a2e)">
-<h2 style="margin:0 0 16px;font-size:clamp(1.4rem,3.5vw,2rem);color:#ffb347">Your Night Out, Elevated</h2>
-<p style="max-width:620px;margin:0 auto;color:#99aabb;line-height:1.7;font-size:.95rem">Step through the doors and you&rsquo;re on island time. The Beach Tiki Bar &amp; Grill is Greensburg&rsquo;s go-to spot for cold drinks, hot food, and great company. Our open patio comes alive after dark with string lights overhead, music in the air, and a crowd that knows how to have a good time. Whether you&rsquo;re grabbing after-work drinks, singing your heart out at karaoke night, or just kicking back with friends &mdash; this is where Greensburg unwinds.</p>
-</section>
-<section id="contact" style="padding:40px 20px;max-width:720px;margin:auto;text-align:center">
-<h2 style="margin:0 0 20px;font-size:1.5rem;color:#ffb347">Come See Us</h2>
-<p style="margin:0 0 6px;color:#fff;font-size:1.05rem"><strong>107-109 North Broadway Street</strong><br>Greensburg, IN 47240</p>
-<p style="margin:10px 0"><a href="tel:8126635554" style="color:#ff6b35;text-decoration:none;font-size:1.05rem">812-663-5554</a></p>
-<p style="margin:4px 0"><a href="mailto:beachtikibar@hotmail.com" style="color:#ffb347;text-decoration:none;font-size:.95rem">beachtikibar@hotmail.com</a></p>
-<a href="https://www.facebook.com/TheBeachTikiBarandGrill" target="_blank" rel="noopener" style="display:inline-block;margin-top:18px;padding:10px 28px;background:#1877f2;color:#fff;border-radius:24px;text-decoration:none;font-weight:600;font-size:.9rem">Follow Us on Facebook</a>
-</section>
-<footer style="text-align:center;padding:24px 20px;border-top:1px solid #ffffff12;color:#556;font-size:.78rem">&copy; 2025 The Beach Tiki Bar &amp; Grill. All rights reserved.</footer>
-<style>@media(min-width:600px){#features{grid-template-columns:1fr 1fr}}</style>
-</body>
-</html>
+<div class="divider"></div>
+<section class="cards section-bokeh" id="features"><h2>What Awaits You</h2><div class="card-grid"><div class="card"><div class="icon">&#127863;</div><h3>Tiki Cocktails</h3><p>Volcano bowls, rum punches, and frozen island drinks crafted with fresh juices and premium spirits.</p></div><div class="card"><div class="icon">&#127834;</div><h3>Island Grill</h3><p>Chargrilled skewers to tropical fish tacos — bold flavors that bring the coast to Indiana.</p></div><div class="card"><div class="icon">&#127928;</div><h3>Live Events</h3><p>Live bands, DJ nights, karaoke, and seasonal luaus. Every weekend is a destination.</p></div></div></section>
+<div class="divider"></div>
+<section class="story" id="story"><div class="warm-overlay"></div><div class="story-inner"><h2>Life on the Patio</h2><div class="wave"></div><div class="pull-quote">Torches flicker, island rhythms fill the air, and every cocktail is a one-way ticket somewhere warmer.</div><p>Step through our doors and the Midwest fades away. The open-air patio is where Greensburg lets loose — sunset sessions, late-night laughs, and the kind of nights you didn't know Indiana had.</p><div class="wave"></div></div></section>
+<div class="divider"></div>
+<section class="contact" id="contact"><div class="contact-inner"><h2>Find Your Way to the Beach</h2><div class="hours-block"><h3>&#9200; Hours</h3><div class="hours-row"><span class="days">Mon — Thu</span><span>4 PM — 12 AM</span></div><div class="hours-row"><span class="days">Fri — Sat</span><span>4 PM — 2 AM</span></div><div class="hours-row"><span class="days">Sunday</span><span>12 PM — 10 PM</span></div></div><div class="contact-block"><div class="cb-icon">&#128205;</div><div><span class="cb-label">Address</span><span class="cb-value">107-109 North Broadway Street<br>Greensburg, IN 47240</span></div></div><div class="contact-block"><div class="cb-icon">&#128222;</div><div><span class="cb-label">Phone</span><span class="cb-value"><a href="tel:8126635554">812-663-5554</a></span></div></div><div class="contact-block"><div class="cb-icon">&#9993;</div><div><span class="cb-label">Email</span><span class="cb-value"><a href="mailto:beachtikibar@hotmail.com">beachtikibar@hotmail.com</a></span></div></div><div class="contact-block"><div class="cb-icon">&#128077;</div><div><span class="cb-label">Facebook</span><span class="cb-value"><a href="https://www.facebook.com/TheBeachTikiBarandGrill" target="_blank">@TheBeachTikiBarandGrill</a></span></div></div><div class="cta-wrap"><a href="tel:8126635554" class="btn">Reserve Tonight</a></div></div></section>
+<footer class="footer"><div class="footer-grid"><div class="footer-col"><h4>The Beach Tiki</h4><p>Tropical cocktails, island flavors, and the best patio nights in Greensburg. Every weekend is a destination.</p></div><div class="footer-col"><h4>Quick Links</h4><a href="#features">Menu</a><a href="#story">Our Story</a><a href="#contact">Contact &amp; Hours</a><a href="https://www.facebook.com/TheBeachTikiBarandGrill" target="_blank">Facebook</a></div><div class="footer-col"><h4>Visit Us</h4><p>107-109 North Broadway Street</p><p>Greensburg, IN 47240</p><p><a href="tel:8126635554">812-663-5554</a></p><p><a href="mailto:beachtikibar@hotmail.com">beachtikibar@hotmail.com</a></p></div></div><div class="footer-bottom">&copy; 2026 The Beach Tiki Bar &amp; Grill &mdash; <a href="https://www.facebook.com/TheBeachTikiBarandGrill" target="_blank">@TheBeachTikiBarandGrill</a></div></footer>
+</body></html>

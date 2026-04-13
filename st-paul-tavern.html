@@ -2,77 +2,69 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>St. Paul Tavern — St. Paul, IN</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>St. Paul Tavern — St. Paul, Indiana</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Georgia,'Times New Roman',serif;color:#2a1a0a;background:#f5efe6}
-a{color:#b03a2e;text-decoration:none}
-nav{position:sticky;top:0;z-index:10;background:#1a0e04;padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
-nav span{color:#d4a847;font-size:1.15em;font-weight:bold;letter-spacing:.5px}
-nav div a{color:#e8d5b0;margin-left:18px;font-size:.9em;font-family:Verdana,sans-serif}
-nav div a:hover{color:#fff}
-.hero{background:linear-gradient(rgba(26,14,4,.82),rgba(26,14,4,.55)),#5a3a1a;text-align:center;padding:80px 20px 60px;color:#f5efe6}
-.hero h1{font-size:2.4em;color:#d4a847;margin-bottom:8px;letter-spacing:1px}
-.hero p{font-size:1.1em;opacity:.9;margin-bottom:22px;font-family:Verdana,sans-serif}
-.hero a{display:inline-block;background:#b03a2e;color:#fff;padding:12px 28px;border-radius:4px;font-family:Verdana,sans-serif;font-size:.95em}
-.hero a:hover{background:#8b2a20}
-.cards{display:grid;grid-template-columns:1fr;gap:20px;padding:40px 20px;max-width:960px;margin:auto}
-@media(min-width:560px){.cards{grid-template-columns:1fr 1fr}}
-.card{background:#fff;border-radius:6px;padding:28px 22px;border-left:4px solid #d4a847;box-shadow:0 1px 4px rgba(0,0,0,.08)}
-.card h3{font-size:1.15em;color:#1a0e04;margin-bottom:8px}
-.card p{font-family:Verdana,sans-serif;font-size:.88em;color:#444;line-height:1.55}
-.story{background:#1a0e04;color:#e8d5b0;padding:50px 20px;text-align:center}
-.story h2{color:#d4a847;font-size:1.7em;margin-bottom:14px}
-.story p{max-width:600px;margin:auto;font-family:Verdana,sans-serif;line-height:1.65;font-size:.92em}
-.contact{padding:40px 20px;max-width:600px;margin:auto;text-align:center}
-.contact h2{color:#1a0e04;font-size:1.7em;margin-bottom:18px}
-.contact p{font-family:Verdana,sans-serif;font-size:.9em;line-height:1.7;color:#333}
-.contact a.fb{display:inline-block;margin-top:12px;background:#3b5998;color:#fff;padding:10px 22px;border-radius:4px;font-family:Verdana,sans-serif;font-size:.85em}
-.contact a.fb:hover{background:#2d4373}
-footer{background:#1a0e04;color:#7a6a50;text-align:center;padding:22px 20px;font-family:Verdana,sans-serif;font-size:.78em}
+body{font-family:Georgia,serif;color:#2c1a0e;background:#faf6f0}
+nav{position:sticky;top:0;z-index:10;background:#1e0f07;display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem}
+nav .logo{color:#d4a64a;font-size:1.25rem;font-weight:700;letter-spacing:.04em}
+nav a{color:#e8d5b5;text-decoration:none;font-size:.85rem;margin-left:1.25rem;letter-spacing:.03em}
+nav a:hover{color:#d4a64a}
+.hero{background:linear-gradient(rgba(30,15,7,.72),rgba(30,15,7,.88)),url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="260"><rect fill="%233a2210" width="400" height="260"/><rect fill="%234a3018" x="20" y="20" width="360" height="220" rx="4"/><circle fill="%23d4a64a" cx="200" cy="100" r="30" opacity=".15"/></svg>') center/cover;height:56vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.5rem}
+.hero h1{color:#d4a64a;font-size:2.4rem;margin-bottom:.35rem;letter-spacing:.06em}
+.hero p{color:#e8d5b5;font-size:1.05rem;font-style:italic;max-width:420px}
+.hero span{display:inline-block;margin-top:1.1rem;padding:.65rem 1.8rem;background:#d4a64a;color:#1e0f07;font-family:sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;text-decoration:none}
+.offers{background:#f3ece0;padding:2.5rem 1.25rem;text-align:center}
+.offers h2{font-size:1.45rem;color:#1e0f07;margin-bottom:1.5rem;letter-spacing:.04em}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:640px;margin:0 auto}
+.card{background:#fff;border:1px solid #e2d8c8;padding:1.1rem .9rem;border-radius:4px}
+.card h3{color:#8b1a1a;font-size:1rem;margin-bottom:.35rem}
+.card p{font-size:.82rem;color:#5a4a3a;line-height:1.45}
+.story{background:#1e0f07;padding:2.5rem 1.25rem;text-align:center}
+.story h2{color:#d4a64a;font-size:1.35rem;margin-bottom:.75rem}
+.story p{color:#d5c5a8;font-size:.92rem;line-height:1.65;max-width:520px;margin:0 auto}
+.contact{background:#faf6f0;padding:2.5rem 1.25rem;text-align:center}
+.contact h2{font-size:1.35rem;color:#1e0f07;margin-bottom:1rem}
+.contact p{font-size:.88rem;color:#5a4a3a;line-height:1.65;margin-bottom:.25rem}
+.contact a{color:#8b1a1a;text-decoration:none}
+.contact a:hover{text-decoration:underline}
+.contact .fb{display:inline-block;margin-top:.8rem;padding:.5rem 1.4rem;background:#3b5998;color:#fff;font-family:sans-serif;font-size:.8rem;border-radius:3px;text-decoration:none;letter-spacing:.04em}
+footer{background:#1e0f07;color:#a08868;text-align:center;padding:1.1rem 1.25rem;font-size:.72rem;font-family:sans-serif;letter-spacing:.05em}
+@media(min-width:600px){.hero h1{font-size:3.2rem}.grid{grid-template-columns:1fr 1fr 1fr 1fr;max-width:860px}}
 </style>
 </head>
 <body>
 <nav>
-<span>St. Paul Tavern</span>
-<div>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</div>
+<div class="logo">St. Paul Tavern</div>
+<div><a href="#menu">Menu</a><a href="#about">About</a><a href="#contact">Contact</a></div>
 </nav>
-<section class="hero">
+<section class="hero" id="top">
 <h1>St. Paul Tavern</h1>
-<p>Cold drinks. Good food. Great neighbors.</p>
-<a href="#contact">Stop On In</a>
+<p>Good food, cold drinks, and the kind of place where everybody knows your name.</p>
+<a href="#contact" class="hero-cta"><span>Find Us on Webster Street</span></a>
 </section>
-<section class="cards">
-<div class="card">
-<h3>Cold Beer on Tap</h3>
-<p>A steady rotation of domestic and craft beers, poured the way a tavern should pour them.</p>
-</div>
-<div class="card">
-<h3>Comfort Classics</h3>
-<p>Burgers, tenderloins, wings, and the kind of wings-and-fries basket that keeps you coming back every week.</p>
-</div>
-<div class="card">
-<h3>Friday Night Fish</h3>
-<p>Our Friday fish fry is a southside tradition — beer-battered and served with all the fixings.</p>
-</div>
-<div class="card">
-<h3>Your Regular Spot</h3>
-<p>Pull up a stool, catch the game, and settle in. This is the kind of place where everybody knows your name.</p>
+<section class="offers" id="menu">
+<h2>What We're Known For</h2>
+<div class="grid">
+<div class="card"><h3>Breaded Tenderloin</h3><p>Hand-breaded, pan-fried Indiana classic. Served with pickles and onion rings.</p></div>
+<div class="card"><h3>Fish Friday</h3><p>Beer-battered cod, golden fries, and tartar sauce made in house every week.</p></div>
+<div class="card"><h3>Burger Basket</h3><p>Half-pound patty, melted American cheese, on a toasted bun with fresh-cut fries.</p></div>
+<div class="card"><h3>Cold Pints</h3><p>Bud Light, Coors, and local favorites on tap. Always ice-cold, always reasonably priced.</p></div>
 </div>
 </section>
 <section class="story" id="about">
-<h2>A Tavern Worth Coming Home To</h2>
-<p>St. Paul Tavern has been the heartbeat of our little town for years. Whether you're winding down after work, meeting friends on a Friday night, or just passing through on SR 3, you'll find an open door, a warm greeting, and a plate of something honest. We're not fancy — we're exactly what a small-town tavern ought to be.</p>
+<h2>A Tavern Built on Regulars</h2>
+<p>Since the day Val and Alicia unlocked the front door, St. Paul Tavern has been the spot where neighbors catch up, newcomers feel welcome, and nobody leaves a stranger. Pull up a stool, order a round, and settle in — you're among friends here.</p>
 </section>
 <section class="contact" id="contact">
-<h2>Find Us</h2>
-<p>103 North Webster Street<br>St. Paul, IN 47272</p>
-<p>765-525-9502<br>valandalicia@sbcglobal.net</p>
-<a class="fb" href="https://www.facebook.com/profile.php?id=100063714034265" target="_blank" rel="noopener">Visit Us on Facebook</a>
+<h2>Come See Us</h2>
+<p>103 North Webster Street, St. Paul, IN 47272</p>
+<p>Open Mon–Sat · Kitchen til close</p>
+<p><a href="tel:7655259502">765-525-9502</a> · <a href="mailto:valandalicia@sbcglobal.net">valandalicia@sbcglobal.net</a></p>
+<a href="https://www.facebook.com/profile.php?id=100063714034265" class="fb" target="_blank" rel="noopener">Follow Us on Facebook</a>
 </section>
-<footer>
-St. Paul Tavern &mdash; 103 N. Webster St., St. Paul, IN 47272 &mdash; 765-525-9502
+<footer>&copy; 2026 St. Paul Tavern · 103 N Webster St, St. Paul, IN 47272</footer>
+<script>document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.startsWith('#')){e.preventDefault();document.querySelector(id)?.scrollIntoView({behavior:'smooth'})}}));</script>
+</body>
+</html>
