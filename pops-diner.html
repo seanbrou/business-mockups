@@ -1,188 +1,539 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
+<script>document.documentElement.classList.remove('no-js');</script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pop's Diner | Greensburg, IN</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pop's Diner | Greensburg, IN — Classic American Diner</title>
+<meta name="description" content="Pop's Diner — serving homemade breakfast, pie, and classic American comfort food on Old Highway 46 in Greensburg, IN. Open early, seven days a week.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Georgia,'Times New Roman',serif;color:#3b1a0a;background:#fef6e4;line-height:1.6;-webkit-font-smoothing:antialiased}
-
-nav{position:sticky;top:0;z-index:100;background:#8b1a1a;display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;box-shadow:0 2px 12px rgba(0,0,0,.3)}
-nav .logo{font-size:1.35rem;font-weight:bold;color:#f5c518;text-decoration:none;letter-spacing:.5px}
-nav .logo span{color:#fef6e4}
-nav .nav-links{display:flex;gap:1.5rem}
-nav .nav-links a{color:#fef6e4;text-decoration:none;font-size:.95rem;letter-spacing:.3px;transition:color .2s}
-nav .nav-links a:hover{color:#f5c518}
-.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px}
-.hamburger span{display:block;width:24px;height:2px;background:#fef6e4;margin:5px 0;border-radius:2px;transition:all .3s}
-
-.hero{background:linear-gradient(135deg,#8b1a1a 0%,#5c0e0e 100%);color:#fef6e4;text-align:center;padding:5rem 1.5rem 4rem;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 30% 50%,rgba(245,197,24,.08) 0%,transparent 70%)}
-.hero h1{font-size:clamp(2.2rem,7vw,4rem);color:#f5c518;margin-bottom:.5rem;position:relative;animation:slideIn .8s ease-out both}
-.hero p{font-size:clamp(1rem,2.5vw,1.35rem);color:rgba(254,246,228,.85);margin-bottom:2rem;font-style:italic;position:relative;animation:slideIn .8s ease-out .2s both}
-.hero .cta{display:inline-block;background:#f5c518;color:#5c0e0e;padding:.85rem 2.5rem;border-radius:4px;text-decoration:none;font-weight:bold;font-size:1.1rem;letter-spacing:.5px;transition:transform .2s,box-shadow .2s;position:relative;animation:slideIn .8s ease-out .4s both}
-.hero .cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(245,197,24,.4)}
-
-@keyframes slideIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-@keyframes cardIn{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-
-.section-title{text-align:center;font-size:clamp(1.5rem,4vw,2.2rem);color:#8b1a1a;margin-bottom:.4rem;letter-spacing:.3px}
-.section-sub{text-align:center;color:#7a4a32;font-style:italic;margin-bottom:2.5rem;font-size:1.05rem}
-
-.menu-section{padding:4rem 1.25rem;max-width:900px;margin:0 auto}
-.menu-grid{display:grid;grid-template-columns:1fr;gap:1.5rem}
-.card{background:#fff;border-radius:8px;padding:2rem 1.75rem 1.75rem;text-align:center;box-shadow:0 2px 16px rgba(139,26,26,.08);border:1px solid rgba(139,26,26,.07);transition:transform .25s,box-shadow .25s;opacity:0;animation:cardIn .6s ease-out forwards}
-.card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(139,26,26,.14)}
-.card .emoji{font-size:2.5rem;margin-bottom:.5rem;display:block}
-.card h3{color:#8b1a1a;font-size:1.2rem;margin-bottom:.35rem}
-.card p{color:#7a4a32;font-size:.95rem;line-height:1.55}
-
-.story-section{background:#8b1a1a;color:#fef6e4;padding:4rem 1.25rem}
-.story-inner{max-width:750px;margin:0 auto}
-.story-inner .section-title{color:#f5c518}
-.story-inner .section-sub{color:rgba(254,246,228,.65)}
-.story-inner p{margin-bottom:1.25rem;font-size:1.05rem;line-height:1.75;color:rgba(254,246,228,.9)}
-
-.contact-section{padding:4rem 1.25rem;max-width:750px;margin:0 auto}
-.contact-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:1.5rem}
-.contact-item{padding:1rem;background:#fff;border-radius:6px;border-left:4px solid #8b1a1a;transition:transform .2s}
-.contact-item:hover{transform:translateX(4px)}
-.contact-item strong{color:#8b1a1a;display:block;margin-bottom:.2rem;font-size:.85rem;text-transform:uppercase;letter-spacing:.5px}
-.contact-item a{color:#5c0e0e;text-decoration:none}
-.contact-item a:hover{color:#f5c518}
-.hours-note{text-align:center;font-style:italic;color:#7a4a32;font-size:1.1rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px dashed rgba(139,26,26,.2)}
-
-footer{background:#3b1a0a;color:rgba(254,246,228,.6);text-align:center;padding:1.5rem;font-size:.85rem;letter-spacing:.3px}
-footer a{color:#f5c518;text-decoration:none}
-
-@media(min-width:600px){
-.hero{padding:6rem 2rem 5rem}
-.menu-grid{grid-template-columns:1fr 1fr}
-.contact-grid{grid-template-columns:1fr 1fr}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#C41E3A;
+  --red-dark:#9A1830;
+  --red-light:#E8D5D8;
+  --gold:#F5C518;
+  --gold-light:#FFF8E1;
+  --cream:#FFFAF0;
+  --cream-dark:#F5EDE0;
+  --brown:#3D2B1F;
+  --brown-light:#6B4A3A;
+  --dark:#1A1A1A;
+  --gray:#6B6B6B;
+  --light-gray:#F0EDE8;
+  --white:#FFFFFF;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Inter',system-ui,sans-serif;
 }
-@media(min-width:900px){
-.menu-grid{grid-template-columns:1fr 1fr 1fr 1fr}
-.contact-grid{grid-template-columns:1fr 1fr}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font-body);color:var(--dark);background:var(--cream);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
+
+/* ===== NAVBAR ===== */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 24px;transition:background .35s,box-shadow .35s}
+.navbar.scrolled{background:rgba(26,26,26,.97);box-shadow:0 2px 24px rgba(0,0,0,.2)}
+.navbar-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo{font-family:var(--font-display);font-size:22px;font-weight:800;color:#fff;letter-spacing:-.3px}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.88);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1.1px;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--red);color:#fff!important;padding:10px 22px;border-radius:999px;font-size:12px!important;letter-spacing:1.3px;transition:background .2s,transform .2s}
+.nav-cta:hover{background:var(--red-dark);transform:scale(1.04)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+.hamburger span{display:block;width:26px;height:2.5px;background:#fff;border-radius:2px;transition:all .3s}
+.mobile-menu{position:fixed;inset:0;background:rgba(26,26,26,.98);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .3s}
+.mobile-menu.open{opacity:1;pointer-events:all}
+.mobile-menu a{color:#fff;font-size:18px;font-weight:600;text-transform:uppercase;letter-spacing:2px}
+.mobile-menu .close-btn{position:absolute;top:24px;right:24px;font-size:36px;cursor:pointer;color:#fff;background:none;border:none}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#111;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:#1a1a1a url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(26,26,26,.78) 0%,rgba(139,26,26,.55) 50%,rgba(61,43,31,.65) 100%)}
+.hero-content{position:relative;z-index:2;text-align:center;padding:100px 24px 80px;max-width:820px}
+.hero-badge{display:inline-block;background:rgba(245,197,24,.15);border:1.5px solid rgba(245,197,24,.45);color:var(--gold);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;padding:8px 20px;border-radius:999px;margin-bottom:28px}
+.hero h1{font-family:var(--font-display);font-size:clamp(52px,9vw,104px);font-weight:900;color:#fff;line-height:.9;margin-bottom:20px;text-shadow:0 4px 40px rgba(0,0,0,.5)}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-sub{font-size:clamp(17px,2.2vw,22px);color:rgba(255,255,255,.88);max-width:560px;margin:0 auto 36px;font-weight:400;line-height:1.55}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:999px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 8px 32px rgba(196,30,58,.35)}
+.btn-red:hover{background:var(--red-dark);box-shadow:0 12px 40px rgba(196,30,58,.45)}
+.btn-gold{background:var(--gold);color:var(--brown);box-shadow:0 8px 32px rgba(245,197,24,.35)}
+.btn-gold:hover{background:#e6b800;box-shadow:0 12px 40px rgba(245,197,24,.45)}
+.btn-outline{background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.35);color:#fff;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.btn-outline:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.6)}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:12px;letter-spacing:2px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;animation:bob 2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.hero-scroll svg{width:18px;height:18px;stroke:rgba(255,255,255,.5)}
+
+/* ===== SECTIONS GENERAL ===== */
+section{padding:80px 24px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--red);margin-bottom:10px}
+.section-title{font-family:var(--font-display);font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.05;margin-bottom:16px;color:var(--dark)}
+.section-title em{font-style:normal;color:var(--red)}
+.section-subtitle{font-size:17px;color:var(--gray);max-width:540px;line-height:1.6;margin-bottom:48px}
+
+/* ===== MENU SECTION ===== */
+.menu-section{background:var(--cream)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.menu-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);transition:transform .25s,box-shadow .25s}
+.menu-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.1)}
+.menu-card-img{height:200px;background-size:cover;background-position:center;position:relative;background-color:#3D2B1F}
+.menu-card-img .price-tag{position:absolute;top:16px;right:16px;background:var(--red);color:#fff;font-weight:700;font-size:14px;padding:6px 14px;border-radius:999px}
+.menu-card-body{padding:24px}
+.menu-card-body h3{font-family:var(--font-display);font-size:22px;font-weight:800;margin-bottom:8px}
+.menu-card-body p{color:var(--gray);font-size:14px;line-height:1.55;margin-bottom:16px}
+.menu-tag{display:inline-block;background:var(--gold-light);color:var(--brown);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 12px;border-radius:999px;margin-right:6px}
+
+/* ===== STORY SECTION ===== */
+.story-section{background:var(--dark);color:#fff;position:relative;overflow:hidden}
+.story-section .section-label{color:var(--gold)}
+.story-section .section-title{color:#fff}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.story-img{border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:#2a1a0a url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;position:relative;box-shadow:0 16px 48px rgba(0,0,0,.3)}
+.story-img::after{content:'';position:absolute;inset:0;border-radius:20px;box-shadow:inset 0 0 0 4px rgba(245,197,24,.2)}
+.story-text p{color:rgba(255,255,255,.78);font-size:16px;line-height:1.8;margin-bottom:20px}
+.story-text p:last-child{margin-bottom:0}
+.story-features{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.story-feature{display:flex;align-items:flex-start;gap:12px}
+.story-feature-icon{width:36px;height:36px;border-radius:10px;background:rgba(196,30,58,.15);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.story-feature span{font-size:14px;font-weight:600;color:#fff;margin-bottom:2px;display:block}
+.story-feature small{font-size:12px;color:rgba(255,255,255,.55);line-height:1.4}
+
+/* ===== ATMOSPHERE BANNER ===== */
+.atmosphere{background:var(--red);padding:56px 24px;position:relative;overflow:hidden;text-align:center}
+.atmosphere::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.15) 0%,transparent 60%)}
+.atmosphere-inner{position:relative;z-index:2;max-width:700px;margin:0 auto}
+.atmosphere h2{font-family:var(--font-display);font-size:clamp(28px,5vw,44px);font-weight:900;color:#fff;margin-bottom:12px}
+.atmosphere h2 em{font-style:normal;color:var(--gold)}
+.atmosphere p{color:rgba(255,255,255,.8);font-size:17px;line-height:1.6;margin-bottom:28px}
+.atmo-chrome{font-size:48px;margin-bottom:16px}
+
+/* ===== VISIT / CONTACT ===== */
+.contact-section{background:var(--light-gray)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact-info{display:flex;flex-direction:column;gap:28px}
+.contact-block{display:flex;gap:16px;align-items:flex-start}
+.contact-icon{width:48px;height:48px;border-radius:14px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.contact-block h4{font-weight:700;font-size:16px;margin-bottom:4px}
+.contact-block p{color:var(--gray);font-size:14px;line-height:1.5}
+.contact-block a{color:var(--red);font-weight:600}
+.contact-block a:hover{color:var(--red-dark)}
+.hours-table{width:100%;border-collapse:collapse}
+.hours-table td{padding:10px 0;font-size:14px;border-bottom:1px solid rgba(0,0,0,.06);color:var(--gray)}
+.hours-table td:last-child{text-align:right;font-weight:600;color:var(--dark)}
+.contact-map{border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.1);aspect-ratio:4/3;background:var(--brown);display:flex;align-items:center;justify-content:center;padding:32px 24px}
+.map-card{color:#fff;text-align:left;width:100%}
+.map-card-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);font-weight:700;margin-bottom:10px}
+.map-card-name{font-family:var(--font-display);font-size:26px;font-weight:800;margin-bottom:10px;line-height:1.1}
+.map-card-addr{font-size:15px;line-height:1.6;margin-bottom:6px;opacity:.85}
+.map-card-tel{font-size:15px;margin-bottom:20px;opacity:.85}
+.map-card-btn{display:inline-block;background:var(--red);color:#fff;padding:13px 26px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;box-shadow:0 4px 14px rgba(196,30,58,.3);transition:background .2s}
+.map-card-btn:hover{background:var(--red-dark)}
+
+/* ===== FOOTER ===== */
+footer{background:var(--dark);color:rgba(255,255,255,.55);padding:56px 24px 24px}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:24px}
+.footer-brand{font-family:var(--font-display);font-size:28px;font-weight:800;color:#fff;margin-bottom:8px}
+.footer-brand span{color:var(--gold)}
+.footer-tagline{font-size:14px;line-height:1.6;max-width:280px}
+.footer-col h5{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:16px}
+.footer-col ul{display:flex;flex-direction:column;gap:10px}
+.footer-col ul li a{font-size:14px;color:rgba(255,255,255,.55);transition:color .2s}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-social{display:flex;gap:12px;margin-top:4px}
+.footer-social a{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.07);color:rgba(255,255,255,.7);font-size:16px;transition:background .2s,color .2s}
+.footer-social a:hover{background:var(--red);color:#fff}
+.footer-bottom{font-size:12px;color:rgba(255,255,255,.3);text-align:center}
+
+/* ===== ANIMATIONS ===== */
+html.no-js .fade-in{opacity:1;transform:none;transition:none}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:.1s}
+.delay-2{transition-delay:.2s}
+.delay-3{transition-delay:.3s}
+.delay-4{transition-delay:.4s}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .story-grid,.contact-grid,.footer-top{grid-template-columns:1fr}
+  .story-features{grid-template-columns:1fr}
+  section{padding:60px 20px}
 }
-@media(max-width:599px){
-.hamburger{display:block}
-.nav-links-mobile{position:fixed;top:0;right:-100%;width:70%;max-width:280px;height:100vh;background:#8b1a1a;display:flex;flex-direction:column;padding:4.5rem 2rem 2rem;gap:1.25rem;transition:right .3s ease;box-shadow:-4px 0 20px rgba(0,0,0,.3);z-index:200}
-.nav-links-mobile.open{right:0}
-.nav-links-mobile a{color:#fef6e4;text-decoration:none;font-size:1.15rem;padding:.5rem 0;border-bottom:1px solid rgba(254,246,228,.15)}
-.nav-links-mobile a:hover{color:#f5c518}
-.overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .3s;z-index:150}
-.overlay.show{opacity:1;pointer-events:auto}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero h1{font-size:clamp(40px,10vw,72px)}
+  .hero-btns{flex-direction:column;align-items:center}
+  .btn{width:100%;max-width:280px;justify-content:center}
+  .menu-grid{grid-template-columns:1fr}
+  .section-inner{padding:0 16px}
+  footer{padding:40px 16px 16px}
+  .footer-top{gap:28px}
+}
+@media(max-width:480px){
+  .hero-content{padding:80px 16px 60px}
+  section{padding:48px 16px}
+  .story-img{aspect-ratio:3/2}
+  .contact-grid{gap:32px}
+  .footer-top{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<nav>
-<a class="logo" href="#">Pop's <span>Diner</span></a>
-<div class="nav-links" id="navDesktop">
-<a href="#menu">Menu</a>
-<a href="#story">Story</a>
-<a href="#visit">Visit</a>
-</div>
-<button class="hamburger" id="hamburger" aria-label="Open menu">
-<span></span><span></span><span></span>
-</button>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#" class="nav-logo">Pop's <span>Diner</span></a>
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#story">Story</a>
+      <a href="#visit">Visit</a>
+      <a href="tel:8126639363" class="nav-cta">Call Now</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
-<div class="overlay" id="overlay"></div>
-<div class="nav-links-mobile" id="navMobile">
-<a href="#menu" onclick="closeMenu()">Menu</a>
-<a href="#story" onclick="closeMenu()">Story</a>
-<a href="#visit" onclick="closeMenu()">Visit</a>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" id="closeMenu" aria-label="Close menu">&times;</button>
+  <a href="#menu" onclick="closeMobileMenu()">Menu</a>
+  <a href="#story" onclick="closeMobileMenu()">Our Story</a>
+  <a href="#visit" onclick="closeMobileMenu()">Visit</a>
+  <a href="tel:8126639363" class="btn btn-gold" onclick="closeMobileMenu()" style="margin-top:8px">Call 812-663-9363</a>
 </div>
 
+<!-- HERO -->
 <section class="hero" id="home">
-<h1>Pop's Diner</h1>
-<p>Where the coffee's always on and everybody knows your name.</p>
-<a class="cta" href="#menu">See What's Cookin'</a>
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">&#127869;&#65039; Greensburg, Indiana</div>
+    <h1>Pop's<br><em>Diner</em></h1>
+    <p class="hero-sub">Where the coffee's always on, the pie's homemade, and everybody leaves full and happy. Pull up a chair — you're always welcome.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn btn-gold">See the Menu</a>
+      <a href="#visit" class="btn btn-outline">Get Directions</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    Scroll
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
 </section>
 
+<!-- MENU -->
 <section class="menu-section" id="menu">
-<h2 class="section-title">From Our Kitchen</h2>
-<p class="section-sub">Homemade favorites served with love since day one.</p>
-<div class="menu-grid">
-<div class="card" style="animation-delay:.1s">
-<span class="emoji">🍳</span>
-<h3>The Big Breakfast</h3>
-<p>Two eggs any style, bacon or sausage, hash browns, and toast. The plate that keeps you going all day long.</p>
-</div>
-<div class="card" style="animation-delay:.25s">
-<span class="emoji">🥧</span>
-<h3>Homemade Pie</h3>
-<p>Baked fresh every morning. From classic cherry to creamy coconut cream — save room, you'll thank yourself.</p>
-</div>
-<div class="card" style="animation-delay:.4s">
-<span class="emoji">☕</span>
-<h3>Bottomless Coffee</h3>
-<p>Refill after refill, no questions asked. Rich, hot, and always ready when you walk through the door.</p>
-</div>
-<div class="card" style="animation-delay:.55s">
-<span class="emoji">🥞</span>
-<h3>Pancake Stack</h3>
-<p>Fluffy golden stacks drizzled in real maple syrup. Light, thick, and big enough to share — but you won't want to.</p>
-</div>
-</div>
+  <div class="section-inner">
+    <div class="section-label fade-in">From Our Kitchen</div>
+    <h2 class="section-title fade-in">Made From <em>Scratch Every Morning</em></h2>
+    <p class="section-subtitle fade-in">Real ingredients, honest portions, and flavors that remind you what home cooking actually tastes like.</p>
+    <div class="menu-grid">
+
+      <div class="menu-card fade-in">
+        <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80')">
+          <div class="price-tag">$8.99</div>
+        </div>
+        <div class="menu-card-body">
+          <h3>The Big Breakfast</h3>
+          <p>Two eggs any style, bacon or sausage, hash browns, and toast. The plate that keeps you going all day long.</p>
+          <span class="menu-tag">Popular</span><span class="menu-tag">Served All Day</span>
+        </div>
+      </div>
+
+      <div class="menu-card fade-in delay-1">
+        <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?auto=format&fit=crop&w=600&q=80')">
+          <div class="price-tag">$4.99</div>
+        </div>
+        <div class="menu-card-body">
+          <h3>Homemade Pie</h3>
+          <p>Baked fresh every morning. Cherry, apple, coconut cream — save room, you'll thank yourself.</p>
+          <span class="menu-tag">Baker's Choice</span><span class="menu-tag">Seasonal</span>
+        </div>
+      </div>
+
+      <div class="menu-card fade-in delay-2">
+        <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80')">
+          <div class="price-tag">$2.49</div>
+        </div>
+        <div class="menu-card-body">
+          <h3>Bottomless Coffee</h3>
+          <p>Refill after refill, no questions asked. Rich, hot, and always ready when you walk through that door.</p>
+          <span class="menu-tag">Always Free Refills</span><span class="menu-tag">Hot & Fresh</span>
+        </div>
+      </div>
+
+      <div class="menu-card fade-in delay-3">
+        <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=600&q=80')">
+          <div class="price-tag">$7.49</div>
+        </div>
+        <div class="menu-card-body">
+          <h3>Pancake Stack</h3>
+          <p>Fluffy golden stacks drizzled in real maple syrup. Light, thick, and big enough to share — but you won't want to.</p>
+          <span class="menu-tag">Fan Favorite</span><span class="menu-tag">Maple Syrup</span>
+        </div>
+      </div>
+
+      <div class="menu-card fade-in delay-4">
+        <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80')">
+          <div class="price-tag">$10.99</div>
+        </div>
+        <div class="menu-card-body">
+          <h3>Classic Burger & Fries</h3>
+          <p>Hand-formed patty, fresh toppings, and a side of crispy fries. Exactly what a burger should be.</p>
+          <span class="menu-tag">Lunch Favorite</span><span class="menu-tag">Hand-formed</span>
+        </div>
+      </div>
+
+      <div class="menu-card fade-in delay-4">
+        <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80')">
+          <div class="price-tag">$4.99</div>
+        </div>
+        <div class="menu-card-body">
+          <h3>Milkshake</h3>
+          <p>Thick, creamy, and made to order. Vanilla, chocolate, or strawberry — the perfect finish to any meal.</p>
+          <span class="menu-tag">Made to Order</span><span class="menu-tag">3 Flavors</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
+<!-- ATMOSPHERE BANNER -->
+<div class="atmosphere">
+  <div class="atmosphere-inner fade-in">
+    <div class="atmo-chrome">&#127874;</div>
+    <h2>A Place That Feels Like <em>Home</em></h2>
+    <p>Booths that have seen a thousand breakfasts. Counter stools with a view of the kitchen. Coffee cups that never run dry. That's Pop's.</p>
+    <a href="#visit" class="btn btn-gold">Plan Your Visit</a>
+  </div>
+</div>
+
+<!-- STORY -->
 <section class="story-section" id="story">
-<div class="story-inner">
-<h2 class="section-title">Our Story</h2>
-<p class="section-sub">A little place with a whole lot of heart.</p>
-<p>Pop's Diner started the way most great diners do — with a dream, a cast-iron skillet, and a belief that a good meal can turn anybody's day around. Back in the early days, Pop himself would be here before the sun came up, brewing the first pot of coffee and getting the biscuits in the oven. He wanted a place where folks could pull off Old Highway 46, sit down in a booth that felt like home, and eat a meal that tasted like someone who loved them made it. That spirit hasn't changed one bit.</p>
-<p>Today, Pop's is more than a restaurant — it's where Greensburg gathers. You'll find farmers finishing up early mornings next to families spending Saturday morning together. Regulars who've been coming for decades still sit at the same stools, and newcomers are always welcomed like old friends. We still make our pie from scratch, still pour coffee until your cup runs dry, and still believe there's nothing a warm plate and a kind word can't fix. Pull up a chair. You're always welcome here.</p>
-</div>
+  <div class="section-inner">
+    <div class="story-grid">
+      <div class="story-img fade-in"></div>
+      <div class="story-text fade-in">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">A Little Place With a <em>Whole Lot of Heart</em></h2>
+        <p>Pop's Diner started the way most great diners do — with a dream, a cast-iron skillet, and a belief that a good meal can turn anybody's day around. Back in the early days, Pop himself would be here before the sun came up, brewing the first pot of coffee and getting the biscuits in the oven.</p>
+        <p>Today, Pop's is more than a restaurant — it's where Greensburg gathers. Farmers finishing up early mornings sit next to families spending Saturday together. Regulars who've been coming for decades still claim the same stools, and newcomers are always welcomed like old friends.</p>
+        <div class="story-features">
+          <div class="story-feature">
+            <div class="story-feature-icon">&#127858;</div>
+            <div>
+              <span>Homemade Daily</span>
+              <small>Our pie is baked from scratch every morning</small>
+            </div>
+          </div>
+          <div class="story-feature">
+            <div class="story-feature-icon">&#9749;</div>
+            <div>
+              <span>Full Coffee Bar</span>
+              <small>Bottomless coffee, always free refills</small>
+            </div>
+          </div>
+          <div class="story-feature">
+            <div class="story-feature-icon">&#128107;</div>
+            <div>
+              <span>Community Gathering Spot</span>
+              <small>Where Greensburg comes together</small>
+            </div>
+          </div>
+          <div class="story-feature">
+            <div class="story-feature-icon">&#128140;</div>
+            <div>
+              <span>Open Early, Every Day</span>
+              <small>We've been here since the crack of dawn</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- VISIT -->
 <section class="contact-section" id="visit">
-<h2 class="section-title">Come On Over</h2>
-<p class="section-sub">We've got a hot cup waiting for you.</p>
-<div class="contact-grid">
-<div class="contact-item">
-<strong>Address</strong>
-4981 Old Highway 46, Greensburg, IN 47240
-</div>
-<div class="contact-item">
-<strong>Phone</strong>
-<a href="tel:8126639363">812-663-9363</a>
-</div>
-<div class="contact-item">
-<strong>Email</strong>
-<a href="mailto:popsdinner2022@yahoo.com">popsdinner2022@yahoo.com</a>
-</div>
-<div class="contact-item">
-<strong>Facebook</strong>
-<a href="https://www.facebook.com/p/Pops-Diner-100087165915795/" target="_blank" rel="noopener">Follow us on Facebook</a>
-</div>
-</div>
-<p class="hours-note">Open early, seven days a week.</p>
+  <div class="section-inner">
+    <div class="section-label fade-in">Come On Over</div>
+    <h2 class="section-title fade-in">We've Got a Hot Cup <em>Waiting for You</em></h2>
+    <p class="section-subtitle fade-in">Pull off Old Highway 46 and find us ready to feed you. No reservations needed — just show up.</p>
+    <div class="contact-grid">
+
+      <div class="fade-in">
+        <div class="contact-info">
+          <div class="contact-block">
+            <div class="contact-icon">&#128205;</div>
+            <div>
+              <h4>Address</h4>
+              <p>4981 Old Highway 46<br>Greensburg, IN 47240</p>
+            </div>
+          </div>
+          <div class="contact-block">
+            <div class="contact-icon">&#128222;</div>
+            <div>
+              <h4>Phone</h4>
+              <p><a href="tel:8126639363">812-663-9363</a></p>
+            </div>
+          </div>
+          <div class="contact-block">
+            <div class="contact-icon">&#9993;</div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:popsdinner2022@yahoo.com">popsdinner2022@yahoo.com</a></p>
+            </div>
+          </div>
+          <div class="contact-block">
+            <div class="contact-icon">&#128100;</div>
+            <div>
+              <h4>Follow Us</h4>
+              <p><a href="https://www.facebook.com/p/Pops-Diner-100087165915795/" target="_blank" rel="noopener">Facebook</a></p>
+            </div>
+          </div>
+          <div class="contact-block">
+            <div class="contact-icon">&#128338;</div>
+            <div>
+              <h4>Hours</h4>
+              <table class="hours-table">
+                <tr><td>Monday – Friday</td><td>6:00 AM – 2:00 PM</td></tr>
+                <tr><td>Saturday – Sunday</td><td>7:00 AM – 2:00 PM</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="contact-map">
+          <div class="map-card">
+            <div class="map-card-label">&#128205; Get Directions</div>
+            <div class="map-card-name">Pop's Diner</div>
+            <div class="map-card-addr">4981 Old Highway 46<br>Greensburg, IN 47240</div>
+            <div class="map-card-tel">&#9742; <a href="tel:8126639363" style="color:var(--gold);text-decoration:none;font-weight:600">812-663-9363</a></div>
+            <a href="https://maps.google.com/maps?q=4981+Old+Highway+46+Greensburg+IN+47240" target="_blank" rel="noopener" class="map-card-btn">Open in Google Maps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-&copy; 2026 Pop's Diner &mdash; 4981 Old Highway 46, Greensburg, IN &mdash; <a href="tel:8126639363">812-663-9363</a>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Pop's <span>Diner</span></div>
+        <p class="footer-tagline">Homemade breakfast, pie, and classic American comfort food on Old Highway 46 in Greensburg, Indiana. Open early, seven days a week.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/p/Pops-Diner-100087165915795/" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#visit">Visit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:8126639363">812-663-9363</a></li>
+          <li><a href="mailto:popsdinner2022@yahoo.com">popsdinner2022@yahoo.com</a></li>
+          <li><a href="https://www.facebook.com/p/Pops-Diner-100087165915795/" target="_blank" rel="noopener">Facebook</a></li>
+          <li>4981 Old Highway 46<br>Greensburg, IN 47240</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Pop's Diner — Greensburg, Indiana. All rights reserved.
+    </div>
+  </div>
 </footer>
 
 <script>
-var hamburger=document.getElementById('hamburger');
-var navMobile=document.getElementById('navMobile');
-var overlay=document.getElementById('overlay');
-function closeMenu(){navMobile.classList.remove('open');overlay.classList.remove('show')}
-hamburger.addEventListener('click',function(){
-navMobile.classList.toggle('open');overlay.classList.toggle('show')});
-overlay.addEventListener('click',closeMenu);
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
 
-var cards=document.querySelectorAll('.card');
-var observer=new IntersectionObserver(function(entries){
-entries.forEach(function(entry){
-if(entry.isIntersecting){entry.target.style.animationPlayState='running';observer.unobserve(entry.target)}
-})},{threshold:0.15});
-cards.forEach(function(card){card.style.animationPlayState='paused';observer.observe(card)});
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeMenuBtn = document.getElementById('closeMenu');
+
+hamburger.addEventListener('click', function() {
+  mobileMenu.classList.add('open');
+});
+closeMenuBtn.addEventListener('click', function() {
+  mobileMenu.classList.remove('open');
+});
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+}
+
+// Scroll-triggered fade-in
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(function(el) {
+  observer.observe(el);
+});
+
+// Failsafe reveal after 3s
+setTimeout(function() {
+  document.querySelectorAll('.fade-in:not(.visible)').forEach(function(el) {
+    el.classList.add('visible');
+  });
+}, 3000);
+
+// Parallax-lite on hero
+const heroBg = document.getElementById('heroBg');
+window.addEventListener('scroll', function() {
+  if (window.scrollY < window.innerHeight) {
+    heroBg.style.transform = 'translateY(' + (window.scrollY * 0.3) + 'px)';
+  }
+}, { passive: true });
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
 </script>
 </body>
 </html>

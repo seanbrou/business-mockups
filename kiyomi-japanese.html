@@ -1,58 +1,299 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kiyomi Japanese Restaurant | Syracuse, IN</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Georgia,'Times New Roman',serif;background:#0a0a0a;color:#e8e8e8;line-height:1.6}
-a{color:#fff;text-decoration:none}nav{position:sticky;top:0;z-index:99;background:rgba(10,10,10,.97);border-bottom:1px solid #c9a94e;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px}
-nav .logo{font-size:1.25rem;color:#c9a94e;font-weight:700;letter-spacing:2px}nav .links a{color:#f8f8f8;font-size:.9rem;margin-left:20px;font-weight:600}
-nav .links a:hover{color:#c9a94e}.hero{text-align:center;padding:100px 24px 80px;background:linear-gradient(180deg,#0a0a0a 0%,#1a1008 100%)}
-.hero h1{font-size:3rem;color:#fff;font-weight:700;letter-spacing:3px;margin-bottom:12px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
-.hero p{font-size:1.2rem;color:#f8f8f8;margin-bottom:28px;font-weight:500}.hero .sub{font-size:1rem;color:#dbc87a;font-weight:600;margin-bottom:32px}
-.cta{display:inline-block;background:#c9a94e;color:#0a0a0a;padding:14px 36px;font-size:1.05rem;font-weight:700;border-radius:4px;letter-spacing:1px}
-.cta:hover{background:#ddb85e}.section{padding:60px 24px;max-width:960px;margin:auto}
-.section h2{font-size:1.8rem;color:#c9a94e;text-align:center;margin-bottom:8px;font-weight:700;letter-spacing:1px}
-.section .subhead{color:#f8f8f8;text-align:center;font-size:1.05rem;font-weight:600;margin-bottom:36px}
-.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.menu-card{background:#141414;border:1px solid #2a2210;padding:24px;border-radius:6px}
-.menu-card h3{color:#fff;font-size:1.1rem;font-weight:700;margin-bottom:4px}.menu-card .price{color:#c9a94e;font-weight:700;font-size:1rem}
-.menu-card p{color:#ddd;font-size:.92rem;margin-top:6px}.story{text-align:center;max-width:720px;margin:auto;padding:60px 24px}
-.story h2{color:#c9a94e;font-size:1.8rem;font-weight:700;margin-bottom:16px}.story p{color:#e0e0e0;font-size:1.02rem;line-height:1.8}
-.contact{background:#111;padding:60px 24px;text-align:center}.contact h2{color:#c9a94e;font-size:1.8rem;font-weight:700;margin-bottom:24px}
-.contact-info{color:#f0f0f0;font-size:1rem;line-height:2}.contact-info a{color:#dbc87a;font-weight:600}
-footer{background:#080808;padding:28px 24px;text-align:center;border-top:1px solid #2a2210}
-footer p{color:#bbb;font-size:.85rem}footer a{color:#c9a94e;font-weight:600}
-@media(max-width:600px){.hero h1{font-size:2rem}nav .links a{margin-left:12px;font-size:.8rem}.menu-grid{grid-template-columns:1fr}}
-</style></head><body>
-<nav><a class="logo" href="#">KIYOMI 🎌</a><div class="links"><a href="#menu">Menu</a><a href="#story">About</a><a href="#contact">Reserve</a></div></nav>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#c9a94e;--gold-light:#ddb85e;--gold-dim:#8a6f2e;--dark:#0a0a0a;--dark2:#111111;--dark3:#1a1a1a;--dark4:#141414;--text:#e8e8e8;--text-dim:#aaa}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--dark);color:var(--text);line-height:1.6}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,10,.97);border-bottom:1px solid var(--gold-dim);padding:0 clamp(16px,4vw,48px);display:flex;align-items:center;justify-content:space-between;height:60px;backdrop-filter:blur(8px)}
+nav .logo{font-size:1.2rem;color:var(--gold);font-weight:700;letter-spacing:3px;text-transform:uppercase}
+nav .links{display:flex;gap:clamp(12px,2vw,28px)}
+nav .links a{color:var(--text);font-size:.88rem;font-weight:600;letter-spacing:.5px;transition:color .2s}
+nav .links a:hover{color:var(--gold)}
+
+/* HERO */
+.hero{position:relative;min-height:clamp(500px,70vh,780px);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1553621042-f6e147245754?w=1600&q=80') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,.85) 0%,rgba(10,10,10,.5) 60%,rgba(26,16,8,.8) 100%)}
+.hero-content{position:relative;text-align:center;padding:40px 24px;max-width:720px}
+.hero-badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.75rem;letter-spacing:3px;text-transform:uppercase;padding:6px 18px;border-radius:40px;margin-bottom:20px}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);color:#fff;font-weight:700;letter-spacing:2px;margin-bottom:10px;line-height:1.1}
+.hero .tagline{font-size:clamp(1rem,2.5vw,1.3rem);color:var(--gold-light);margin-bottom:14px;font-weight:500}
+.hero .sub{font-size:.95rem;color:#ccc;margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto}
+.hero .cta{display:inline-block;background:var(--gold);color:#0a0a0a;padding:14px 38px;font-size:1rem;font-weight:700;border-radius:4px;letter-spacing:.5px;transition:background .2s,transform .2s}
+.hero .cta:hover{background:var(--gold-light);transform:translateY(-2px)}
+
+/* DIVIDER */
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent)}
+
+/* SECTIONS */
+.section{padding:clamp(48px,8vw,96px) clamp(16px,5vw,48px);max-width:1100px;margin:auto}
+.section-header{text-align:center;margin-bottom:clamp(36px,6vw,60px)}
+.section-header h2{font-size:clamp(1.6rem,4vw,2.2rem);color:var(--gold);font-weight:700;letter-spacing:1.5px;margin-bottom:8px}
+.section-header p{color:var(--text-dim);font-size:1rem;max-width:520px;margin:auto}
+
+/* MENU GRID */
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.menu-card{background:var(--dark4);border:1px solid #2a2210;border-radius:10px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.menu-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(201,169,78,.12)}
+.menu-card-img{width:100%;height:160px;object-fit:cover}
+.menu-card-body{padding:20px 22px 22px}
+.menu-card h3{color:#fff;font-size:1.08rem;font-weight:700;margin-bottom:4px}
+.menu-card .price{color:var(--gold);font-weight:700;font-size:.95rem}
+.menu-card p{color:var(--text-dim);font-size:.87rem;margin-top:6px;line-height:1.5}
+
+/* STORY / ABOUT — two-column with visual */
+.story-section{background:var(--dark2);padding:clamp(48px,8vw,80px) clamp(16px,5vw,48px)}
+.story-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,72px);align-items:center}
+.story-text h2{font-size:clamp(1.5rem,3.5vw,2.1rem);color:var(--gold);font-weight:700;letter-spacing:1px;margin-bottom:18px}
+.story-text p{color:#ccc;font-size:.97rem;line-height:1.85;margin-bottom:14px}
+.story-text .signature{color:var(--gold-dim);font-size:.85rem;margin-top:20px;font-style:italic}
+.story-visual{border-radius:12px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.5)}
+.story-visual img{width:100%;height:100%;object-fit:cover;min-height:340px;display:block}
+
+/* FEATURES */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1100px;margin:auto}
+.feature-card{background:var(--dark3);border:1px solid #222;border-radius:10px;padding:28px 22px;text-align:center;transition:border-color .2s}
+.feature-card:hover{border-color:var(--gold-dim)}
+.feature-icon{font-size:2.2rem;margin-bottom:12px}
+.feature-card h3{color:#fff;font-size:1rem;font-weight:700;margin-bottom:6px}
+.feature-card p{color:var(--text-dim);font-size:.85rem}
+
+/* GALLERY STRIP */
+.gallery-strip{display:flex;gap:12px;overflow-x:auto;padding:4px 0;scrollbar-width:none}
+.gallery-strip::-webkit-scrollbar{display:none}
+.gallery-strip img{width:clamp(240px,30vw,360px);height:220px;object-fit:cover;border-radius:10px;flex-shrink:0;transition:transform .2s}
+.gallery-strip img:hover{transform:scale(1.03)}
+
+/* CONTACT / RESERVE — two-column */
+.contact-section{background:var(--dark2);padding:clamp(48px,8vw,80px) clamp(16px,5vw,48px)}
+.contact-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,72px);align-items:center}
+.contact-visual{border-radius:12px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.5)}
+.contact-visual img{width:100%;height:100%;object-fit:cover;min-height:340px;display:block}
+.contact-info{display:flex;flex-direction:column;gap:20px}
+.contact-info h2{font-size:clamp(1.5rem,3.5vw,2.1rem);color:var(--gold);font-weight:700;letter-spacing:1px;margin-bottom:4px}
+.contact-info .lead{color:#ccc;font-size:.97rem;margin-bottom:10px}
+.contact-row{display:flex;align-items:flex-start;gap:14px}
+.contact-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+.contact-row .label{color:var(--text-dim);font-size:.8rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}
+.contact-row .value{color:#fff;font-size:.97rem;font-weight:500}
+.contact-row .value a{color:#fff;transition:color .2s}
+.contact-row .value a:hover{color:var(--gold)}
+.contact-cta{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0a0a0a;padding:12px 28px;font-size:.95rem;font-weight:700;border-radius:4px;transition:background .2s;align-self:flex-start}
+.contact-cta:hover{background:var(--gold-light)}
+
+/* FB SECTION */
+.fb-section{padding:clamp(40px,6vw,64px) clamp(16px,5vw,48px);text-align:center;background:var(--dark3);border-top:1px solid #1e1e1e}
+.fb-section p{color:var(--text-dim);font-size:.95rem;margin-bottom:16px}
+.fb-btn{display:inline-flex;align-items:center;gap:10px;background:#1877f2;color:#fff;padding:13px 30px;font-size:.95rem;font-weight:700;border-radius:6px;transition:background .2s}
+.fb-btn:hover{background:#166fe5}
+.fb-btn svg{width:20px;height:20px;fill:#fff}
+
+/* FOOTER */
+footer{background:#060606;padding:32px clamp(16px,5vw,48px);text-align:center;border-top:1px solid #1a1a1a}
+footer .footer-logo{color:var(--gold);font-size:1.1rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}
+footer p{color:#666;font-size:.82rem;line-height:1.7}
+footer a{color:var(--gold-dim);transition:color .2s}
+footer a:hover{color:var(--gold)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .story-inner,.contact-inner{grid-template-columns:1fr}
+  .story-visual,.contact-visual{min-height:260px}
+  .features{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .features{grid-template-columns:1fr}
+  nav .links{gap:10px}
+}
+</style></head>
+<body>
+
+<nav>
+  <a class="logo" href="#">Kiyomi 🎌</a>
+  <div class="links">
+    <a href="#menu">Menu</a>
+    <a href="#story">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Reserve</a>
+  </div>
+</nav>
+
+<!-- HERO -->
 <section class="hero">
-<h1>Kiyomi Japanese Cuisine</h1>
-<p class="sub">Sushi &amp; Hibachi — Crafted with Passion</p>
-<p>Experience the art of Japanese dining in the heart of Syracuse, Indiana.</p>
-<a href="#contact" class="cta">Reserve a Table</a>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Sushi &amp; Hibachi · Syracuse, IN</div>
+    <h1>Kiyomi Japanese Cuisine</h1>
+    <p class="tagline">Crafted with Passion. Served with Soul.</p>
+    <p class="sub">From hand-rolled sushi to sizzling hibachi, every dish tells a story of tradition and flavor.</p>
+    <a href="#contact" class="cta">Reserve a Table</a>
+  </div>
 </section>
-<div class="section" id="menu">
-<h2>Featured Menu</h2>
-<p class="subhead">Signature dishes fresh from our kitchen to your table 🍣</p>
-<div class="menu-grid">
-<div class="menu-card"><h3>Dragon Roll</h3><span class="price">$16.95</span><p>Shrimp tempura, avocado, eel sauce, tobiko</p></div>
-<div class="menu-card"><h3>Hibachi Steak</h3><span class="price">$22.95</span><p>USDA choice sirloin, hibachi vegetables, fried rice</p></div>
-<div class="menu-card"><h3>Sashimi Deluxe</h3><span class="price">$26.95</span><p>Assorted premium fish — chef's daily selection</p></div>
-<div class="menu-card"><h3>Spicy Tuna Roll</h3><span class="price">$14.95</span><p>Fresh tuna, spicy mayo, scallions, sesame</p></div>
-<div class="menu-card"><h3>Hibachi Shrimp &amp; Chicken</h3><span class="price">$24.95</span><p>Tender shrimp and chicken, hibachi veggies, rice</p></div>
-<div class="menu-card"><h3>Volcano Roll</h3><span class="price">$15.95</span><p>Spicy crab, cream cheese, baked with dynamic sauce 🌋</p></div>
-</div></div>
-<div id="story" class="story">
-<h2>Our Story</h2>
-<p>At Kiyomi, we bring the timeless traditions of Japanese cuisine to Syracuse. Every dish is prepared with care — from hand-rolled sushi to sizzling hibachi grilled tableside. Our chefs honor authentic flavors while creating a warm, welcoming experience for every guest. Whether you're celebrating a special occasion or enjoying a weeknight dinner, Kiyomi is your destination for exceptional Japanese dining. 🍱</p>
+
+<div class="divider"></div>
+
+<!-- FEATURE HIGHLIGHTS -->
+<div class="section" style="padding-top:clamp(36px,6vw,60px);padding-bottom:clamp(36px,6vw,60px)">
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">🍣</div>
+      <h3>Fresh Sushi</h3>
+      <p>Hand-rolled daily with the finest fish</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔥</div>
+      <h3>Hibachi Grilling</h3>
+      <p>Tableside cooking with showmanship</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🍱</div>
+      <h3>Authentic Flavors</h3>
+      <p>Traditional recipes, local heart</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎉</div>
+      <h3>Private Events</h3>
+      <p>Celebrations made unforgettable</p>
+    </div>
+  </div>
 </div>
-<div class="contact" id="contact">
-<h2>Reservations &amp; Contact</h2>
-<div class="contact-info">
-<p>📍 404 S Huntington St., Syracuse, IN 46567</p>
-<p>📞 <a href="tel:5745295025">574-529-5025</a></p>
-<p>✉️ <a href="mailto:xinh521@163.com">xinh521@163.com</a></p>
-<p>🕐 Mon–Thu: 11 AM – 9 PM &nbsp;|&nbsp; Fri–Sat: 11 AM – 10 PM &nbsp;|&nbsp; Sun: 12 PM – 9 PM</p>
-<p><a href="https://www.facebook.com/Kiyomi-Japanese-Cuisine-1593620307632400" target="_blank">Follow us on Facebook 🍶</a></p>
-</div></div>
-<footer><p>&copy; 2026 Kiyomi Japanese Restaurant — <a href="https://www.facebook.com/Kiyomi-Japanese-Cuisine-1593620307632400">Facebook</a></p></footer>
-<script>document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})})});</script>
+
+<div class="divider"></div>
+
+<!-- MENU -->
+<div class="section" id="menu">
+  <div class="section-header">
+    <h2>Featured Menu</h2>
+    <p>Signature dishes crafted with care — from our kitchen to your table.</p>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=600&q=80" alt="Dragon Roll">
+      <div class="menu-card-body"><h3>Dragon Roll</h3><span class="price">$16.95</span><p>Shrimp tempura, avocado, eel sauce, tobiko</p></div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Hibachi Steak">
+      <div class="menu-card-body"><h3>Hibachi Steak</h3><span class="price">$22.95</span><p>USDA choice sirloin, hibachi vegetables, fried rice</p></div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1534256958597-7fe685cbd745?w=600&q=80" alt="Sashimi Deluxe">
+      <div class="menu-card-body"><h3>Sashimi Deluxe</h3><span class="price">$26.95</span><p>Assorted premium fish — chef's daily selection</p></div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&q=80" alt="Spicy Tuna Roll">
+      <div class="menu-card-body"><h3>Spicy Tuna Roll</h3><span class="price">$14.95</span><p>Fresh tuna, spicy mayo, scallions, sesame</p></div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1604909052868-94e60e22c3c5?w=600&q=80" alt="Hibachi Shrimp & Chicken">
+      <div class="menu-card-body"><h3>Hibachi Shrimp &amp; Chicken</h3><span class="price">$24.95</span><p>Tender shrimp and chicken, hibachi veggies, rice</p></div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=600&q=80" alt="Volcano Roll">
+      <div class="menu-card-body"><h3>Volcano Roll</h3><span class="price">$15.95</span><p>Spicy crab, cream cheese, baked with dynamic sauce</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- GALLERY -->
+<div class="section" id="gallery">
+  <div class="section-header">
+    <h2>Gallery</h2>
+    <p>A taste of what awaits you at Kiyomi.</p>
+  </div>
+  <div class="gallery-strip">
+    <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=700&q=80" alt="Sushi presentation">
+    <img src="https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=700&q=80" alt="Hibachi grill">
+    <img src="https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=700&q=80" alt="Sashimi plate">
+    <img src="https://images.unsplash.com/photo-1540648639573-8c848de23f0a?w=700&q=80" alt="Japanese restaurant ambiance">
+    <img src="https://images.unsplash.com/photo-1562802378-063ec186a863?w=700&q=80" alt="Fresh ingredients">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- STORY -->
+<div class="story-section" id="story">
+  <div class="story-inner">
+    <div class="story-text">
+      <h2>Our Story</h2>
+      <p>At Kiyomi, we bring the timeless traditions of Japanese cuisine to Syracuse, Indiana. Every dish is prepared with care — from hand-rolled sushi to sizzling hibachi grilled tableside.</p>
+      <p>Our chefs honor authentic flavors while creating a warm, welcoming experience for every guest. Whether you're celebrating a special occasion or enjoying a weeknight dinner, Kiyomi is your destination for exceptional Japanese dining.</p>
+      <p class="signature">— The Kiyomi Family &amp; Team</p>
+    </div>
+    <div class="story-visual">
+      <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=900&q=80" alt="Kiyomi chef preparing sushi">
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div>
+        <h2>Reservations &amp; Contact</h2>
+        <p class="lead">Visit us or reach out to reserve your table today.</p>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="label">Address</div>
+          <div class="value">404 S Huntington St., Syracuse, IN 46567</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="label">Phone</div>
+          <div class="value"><a href="tel:5745295025">574-529-5025</a></div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="label">Email</div>
+          <div class="value"><a href="mailto:xinh521@163.com">xinh521@163.com</a></div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <div class="label">Hours</div>
+          <div class="value">Mon–Thu: 11 AM – 9 PM &nbsp;|&nbsp; Fri–Sat: 11 AM – 10 PM &nbsp;|&nbsp; Sun: 12 PM – 9 PM</div>
+        </div>
+      </div>
+      <div>
+        <a href="tel:5745295025" class="contact-cta">📞 Call to Reserve</a>
+      </div>
+    </div>
+    <div class="contact-visual">
+      <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=900&q=80" alt="Kiyomi Japanese Restaurant exterior">
+    </div>
+  </div>
+</div>
+
+<!-- FACEBOOK -->
+<div class="fb-section">
+  <p>Follow us for specials, events &amp; mouthwatering updates</p>
+  <a href="https://www.facebook.com/Kiyomi-Japanese-Cuisine-1593620307632400" target="_blank" rel="noopener" class="fb-btn">
+    <svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.8 11.9V15.4l-2.2-.1V12.6H6.8V9.5h2.5V7.2C9.3 5 11 3.4 13.7 3.4h2.4V.8h-3.2C10.7.8 9 2.4 9 5.2v4.3H6v3.1h3v8.5h3.4v-8.5h2.8l.5-3.1H15V12.3A12 12 0 0 0 24 12z"/></svg>
+    Follow Kiyomi on Facebook
+  </a>
+</div>
+
+<footer>
+  <div class="footer-logo">Kiyomi 🎌</div>
+  <p>404 S Huntington St., Syracuse, IN 46567 &nbsp;|&nbsp; <a href="tel:5745295025">574-529-5025</a> &nbsp;|&nbsp; <a href="mailto:xinh521@163.com">xinh521@163.com</a></p>
+  <p style="margin-top:8px">&copy; 2026 Kiyomi Japanese Restaurant. All rights reserved.</p>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})})});
+</script>
 </body></html>
